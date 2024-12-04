@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /images/timeline.png
+Disallow: /images/uparrow.png
+Disallow: /images/text-bubble-framed.png
+Disallow: /images/paper-bg.jpg
+Disallow: /images/lee_grant_surrender.txt
+Disallow: /images/gettysburg_battle_credit.txt
+Disallow: /timeline.svg
+
+Sitemap: https://civilwartimeline.github.io/sitemap.xml
