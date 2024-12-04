@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--NOTE: Add the Gettysburg Address into the timeline. Today, you were looking for solutions to a problem. That is fine. Add this in the timeline next, though. There is still more that needs to be done to this before it can be released.-->
+    <meta charset="utf-8">
+    <meta name="description" content="Welcome to Civil War Event Timeline, a digital timeline of each event that occured during the War Between the States.">
+    <meta name="author" content="Azariah Easey, easeystrings.com, azariah15yocoder.github.io">
+    <meta name="keywords" content="civil war timeline, civil war timeline of events, american civil war timeline, u s civil war timeline, u.s civil war timeline, u.s. civil war timeline, US civil war timeline">
+    <!--keep updating the above parameters as more demand for this content surges-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width">
+    <title>Civil War Event Timeline</title>
+    <style>
+        @import url(site_fonts/CASTELAR.TTF);
+        /*everything else for paragraph tags*/
+
+        body {
+            background-image: url(images/paper-bg.jpg);
+            background-repeat: initial;
+            /*font-family: Arial, sans-serif;*/ /*in case font goes wrong*/
+            font-family: "Castellar", Calibri, sans-serif;
+            cursor: inherit;
+            width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            font-family: "Castellar", Calibri, sans-serif;
+        }
+
+        p, ul, li, ol{
+            font-family: Calibri, sans-serif;
+            font-size: 15pt;
+        }
+
+        .popup p, .popup ol, .popup li {
+            font-size: 16px;
+        }
+
+        .story {
+            position: center;
+            margin: auto;
+            max-width: 1500px;
+        }
+
+        #fortSumterImage {
+            max-width: 300px;
+        }
+
+        .years {
+            font-family: "Castellar", Calibri, sans-serif;
+        }
+
+        #timeline {
+            max-height: 104px;
+            display: inline-block;
+        }
+
+        #changingTitle {
+            font-size: 30pt;
+        }
+
+        #fortSumterBattle {
+            max-width: 200px;
+            padding-left: 295px;
+        }
+
+        #shilohBattle {
+            /* April 6, 1862 */
+            max-width: 300px;
+            /*Work on this tomorrow.*/
+            padding-left: 130px;
+        }
+
+        #ironcladBattle {
+            max-width: 300px;
+            /*padding-left: 1358px;*/
+            padding-left: 170px;
+            position: relative;
+        }
+
+        #chancellorsvilleBattle {
+            max-width: 300px;
+            padding-left: 150px;
+            position: relative;
+        }
+
+        .invisibleNumberHolder {
+            max-width: 160px;
+            visibility: hidden;
+        }
+
+        #jeffersonDavis {
+            max-width: 200px;
+            padding-left: 1000px;
+            /*padding-bottom: 50px;*/
+            padding-bottom: 40px;
+            position: relative;
+        }
+
+        #cannonInField {
+            max-width: 178.7px;
+            padding-left: 110px;
+        }
+
+        .arrows {
+            height: 100px;
+            position: absolute;
+        }
+
+        #fortSumterArrow {
+            left: 358px;
+            bottom: 235px;
+            z-index: -1;
+        }
+
+        #gettysburgBattle {
+            max-width: 309px;
+            padding-left: 425px;
+        }
+
+        #antiamBattle {
+            max-width: 296px;
+            padding-left: 194px;
+        }
+
+        #emancipationProclamation {
+            max-width: 400px;
+            padding-left: 620px;
+        }
+
+        #franklinBattle {
+            max-width: 300px;
+            padding-left: 1450px;
+            position: relative;
+        }
+
+        #gettysburgAddress {
+            max-width: 400px;
+            padding-bottom: 100px;
+            padding-left: 230px;
+        }
+
+        .scrolling-wrapper {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            max-width: 1920px;
+        }
+
+        #leftScroll {
+            position: absolute;
+            color: darkgrey;
+            top: 860px;
+            left: 80px;
+        }
+
+        #surrender {
+            max-width: 300px;
+            position: relative;
+            padding-left: 1330px;
+        }
+
+        #cannon {
+            max-width: 200px;
+        }
+
+        .scrolling-wrapper:hover {
+            cursor: grab;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            background-image: url(images/paper-bg-scrollbar.jpg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            width: 5px;
+            background-color: grey;
+            border-radius: 5px;
+            border: 3px solid grey;
+            visibility: hidden;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-image: url(images/paper-bg-scrollbar.jpg);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            visibility: visible;
+        }
+
+        .popup {
+            visibility: hidden;
+            max-width: 900px;
+            max-height: 500px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: 10px solid black;
+            padding: 10px;
+            margin: 20px;
+            background-color: white;
+            position: absolute;
+            left: calc(50% - 26%);
+            bottom: calc(50% - 70%);
+        }
+
+        .popup .attribution {
+            font-size: 10px;
+        }
+
+        .popup .center {
+            text-align: center;
+        }
+
+        #jeffersonDavisImage {
+            max-width: 250px;
+        }
+
+        #battleOfShilohImage {
+            max-width: 400px;
+        }
+
+        #antiamBattleImage {
+            max-width: 400px;
+        }
+
+        #emancipationImage {
+            max-width: 550px;
+        }
+
+        #gettysburgBattleImage {
+            max-width: 500px;
+        }
+
+        #franklinBattleImage {
+            max-width: 500px;
+        }
+
+        @media only screen and (max-width: 1284px) {
+            .popup {
+                left: calc(50% - 26%);
+                bottom: calc(50% - 70%); /*edit these parameters*/
+            }
+        }
+
+        @media only screen and (max-width: 778px) {
+            .popup {
+                left: calc(50% - 26%);
+                bottom: calc(50% - 70%); /*edit these parameters*/
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fadeIn {
+            from{opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @media only screen and (max-width: 791px) {
+            #changingTitle {
+                font-size: 20pt;
+            }
+        }
+    </style>
+</head>
+<body id="mainInfo">
+    <header>
+        <!--more info in here-->
+        <h1 style="text-align: center; padding-bottom: 58px;" id="changingTitle">Civil War Event Timeline</h1>
+    </header>
+
+    <main>
+        <section class="story">
+            <article>
+                <p>
+                    In April 12, 1861, the first shot was heard at Fort Sumter, signaling the beginning of a war that would
+                    last for four years The War Between the States, which is widely known as the Civil War, brought pain to
+                    the homes of families nationwide, both on the Union side and on the Confederate side. With the loss of
+                    thousands of men who were willing to fight for what they believed to be right, this war was a devastating
+                    disaster, even though the United States of America was united again as a result.
+                </p>
+                <p>
+                    Most of us as Americans have many guesses as to what happened during the Civil War. We salute those who
+                    fought for the Union and sneer at those who fought for the would-have-been Confederate States of America. We
+                    support those who were "fighting for the end of slavery," and we trample on the documentation of those who
+                    supported the racial crime. But, if we were to look into the entire story, we would find the heroes—and
+                    the villains—on both sides of the story.
+                </p>
+                <p>
+                    Welcome to Civil War Timeline, where we trace the story of the Civil War, from the war at Fort Sumter to
+                    the surrender between Sherman and Lee. While exploring this timeline, something inside the story
+                    concerning the War Between the States might jump out at you in a way that you have never experienced
+                    before.
+                </p>
+                <p style="padding-bottom: 114px;">
+                    Happy Exploring!
+                </p>
+            </article>
+        </section>
+
+        <noscript>
+            <p>
+                <b>By the way, this web site depends on an extensive use of JavaScript. If you are reading this message, then that means that you 
+                probably do not have JavaScript enabled in your browser. Enable JavaScript before continuing. If you are unable to do so, it may be 
+                helpful to download a browser that already runs JavaScript.</b>
+            </p>
+        </noscript>
+        <div class="scrolling-wrapper">
+            <!--You might want to get some information concerning the Battle of Chancelorsville. Try to find sources, paraphrase them, and cite them. Also, it may be helpful
+            to use your notes on the subject as well. It might help to mention what "Stonewall" Jackson said when he died.-->
+            <!--<button id="leftScroll" style="background: none; border: none; background-color: none; font-size: 150px;"><b><</b></button>-->
+            <table>
+                <!--This table is to be a replacement for the items above.-->
+                <tbody>
+                    <tr>
+                        <td style=" max-width: 497px;">
+                            <a href="javascript:void(0)" onclick="showPopup('jeffersonDavisInfo');"><img src="images/jefferson-davis-framed.jpg" id="jeffersonDavis" alt="Jefferson Davis Becomes President of the Confederate States of America (https://www.americaslibrary.gov/jb/civil/jb_civil_davis_1.html) Site this source! Check for plagiarism!"></a>
+                            <a href="javscript:void(0)" onclick="showPopup('ironcladBattleInfo');"><img src="images/ironclad_battle_popup.png" id="ironcladBattle" alt="Battle of the Ironclads, March 9, 1862"></a> <!--I don't know what source to use.-->
+                            <a href="javascript:void(0)" onclick="showPopup('emancipationProclamationInfo');"><img src="images/emancipation_proclamation_framed.jpg" id="emancipationProclamation" alt="The Emancipation Proclamation is released in January 1, 1863. (https://www.archives.gov/exhibits/featured-documents/emancipation-proclamation) Site this source!" /></a>
+                            <a href="javascript:void(0)" onclick="showPopup('battleOfChancellorsvilleInfo');"><img src="images/battle_of_chancellorsville_popup.png" id="chancellorsvilleBattle" alt="Battle of Chancellorsville (Find a source to cite for this. If you can't, use your own notes."></a>
+                            <a href="javascript:void(0)" onclick="showPopup('battleOfFranklinInfo');"><img src="images/battle_of_franklin_framed.jpg" id="franklinBattle" alt="Battle of Franklin, November 30, 1864 (https://www.battlefields.org/learn/maps/franklin-nov-30-1864). Cite this source if necessary. Who knows, you may have to use Wikipedia. Yikes! That's not a trustworthy source!"></a>
+                        </td>
+                        <td style="text-indent: 780px; max-width: 815.83px;">
+                            <!--nothing in here quite yet-->
+                        </td>
+                        <td style="text-indent: 1155px; max-width: 1200.83px;">
+                        </td>
+                        <td style="text-indent: 1160px; max-width: 1196.5px;">
+                        </td>
+                        <td style="max-width: 1197px;">
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <img src="images/timeline.png" id="timeline" alt="Civil War Timeline">
+            <!--Remember, the default width of this image is 3000.-->
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="text-indent: 80px; max-width: 497px;">
+                            <p class="years"><b>1861</b></p> <!--Clickable images can be placed in here.-->
+                            <a href="javascript:void(0)" onclick="showPopup('fortSumterInfo');"><img src="images/fort-sumter-picture-cover.jpg" id="fortSumterBattle" alt="Battle of Fort Sumter, the beginning of the Civil War"></a>
+                            <a href="javascript:void(0)" onclick="showPopup('bullRunInfo');"><img src="images/cannons_framed.jpg" id="cannonInField" alt="Battle of Bull Run, also known as the First Manesseh."></a>
+                        </td>
+                        <td style="text-indent: 780px; max-width: 815.83px;">
+                            <p class="years"><b>1862</b></p>
+                            <img src="images/picture-frame.png" class="invisibleNumberHolder" alt="A Supporter">
+                        </td>
+                        <td style="text-indent: 1155px; max-width: 1200.83px;">
+                            <p class="years"><b>1863</b></p>
+                            <a href="javascript:void(0)" onclick="showPopup('battleOfShilohInfo');"><img src="images/shiloh-framed.jpg" id="shilohBattle" alt="Battle of Shiloh" /></a>
+                            <a href="javascript:void(0)" onclick="showPopup('antiamBattleInfo');"><img src="images/antiam-framed.jpg" id="antiamBattle" alt="Battle of Antietam" /></a>                            
+                            <img src="images/picture-frame.png" class="invisibleNumberHolder" alt="A Supporter">
+                        </td>
+                        <td style="text-indent: 1160px; max-width: 1196.5px;">
+                            <p class="years"><b>1864</b></p>
+                            <a href="javascript:void(0)" onclick="showPopup('gettysburgBattleInfo');"><img src="images/gettysburg_framed.jpg" id="gettysburgBattle" alt="Battle of Gettysburg (https://www.battlefields.org/learn/civil-war/battles/gettysburg) Cite this source! This will be important" /></a> <!--Battle of Gettysburg will be here.-->
+                            <a href="javascript:void(0)" onclick="showPopup('gettysburgAddressInfo');"><img src="images/gettysburgAddress.png" id="gettysburgAddress" alt="Lincoln gives the Gettysburg Address in November 19, 1863. (cite source if necessary)" /></a>
+                            <img src="images/picture-frame.png" class="invisibleNumberHolder" alt="A Supporter" />
+                        </td>
+                        <td style="text-indent: 1162px; max-width: 1197px;">
+                            <p class="years"><b>1865</b></p>
+                            <a href="javascript:void(0)" onclick="showPopup('leeGrantSurrenderInfo');"><img src="images/lee_and_grant_framed.jpg" id="surrender" alt="Lee surrenders to Grant." /></a>
+                            <img src="images/picture-frame.png" class="invisibleNumberHolder" alt="A Supporter">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="popup" id="fortSumterInfo"> <!--Now we know how this works, use this for each of the items in the timeline.-->
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('fortSumterInfo');"><== Back to Timeline</a>
+            <h2>Battle of Fort Sumter (April 12, 1861)</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="font-family: Calibri, sans-serif; max-width: 400px;">
+                            <img src="images/fort-sumter-battle.jpg" id="fortSumterImage" alt="Fort Sumter Battle, April 12, 1861" /><br />
+                            Source: <a href="https://www.craftedcharlestontours.com/templates/yootheme/cache/31/battle-of-fort-sumter-charleston-history-31dfd658.webp" style="font-family: Calibri, sans-serif;">https://www.craftedcharlestontours.com/templates/yooth<br />eme/ache/31/battle-of-fort-sumter-charleston-history-31dfd658.webp</a>
+                        </td>
+                        <td>
+                            <p>On April 12, 1861, Abraham Lincoln sent troops to Fort Sumter to guard it. When the Confederates saw what the Union had done, 
+                            they started to attack the fort. Albeit there were no injuries, this gave the Union the chance to start the War Between the States, 
+                            one of the most bloodiest wars in the history of the nation and the entire world.</p> <!--This was unique, so we are good.-->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="popup" id="bullRunInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('bullRunInfo');"><== Back to Timeline</a>
+            <h2>The Battle of Bull Run (July 21, 1861)</h2>
+            <p>The Battle of Bull Run was one of the first important conflicts in the War Between the States. General Irwin McDowell was leading a force of 35,000 Union soldiers, 
+            while General Pierre Beauregard, a Confederate soldier, led 33,000 of his men. During this battle, there were citizens who had come in their carriages and brought 
+            picnic blankets. They were mainly there to be entertained by the fighting and bloodshed. However, some of the bullets were beginning to threaten to take the lives 
+            of those individuals, so they hustled away from the battlefield.</p>
+            <p>In this particular battle, the Confederates almost lost. However, one of their heroes, Thomas "Stonewall" Jackson, led his men into the thick of the battle 
+            and claimed the victory for that day. In fact, in this very battle, he was hit by a bullet but kept on fighting. This gained him the nickname "Stonewall."</p>
+            <div class="center">
+                <img src="images/manassas_battle.jpg" id="cannon" alt="A Cannon in Manassas Battlefield." />
+                <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56619626@N05/8403972164">Manassas National Battlefield Park</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/56619626@N05">InSapphoWeTrust</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse">CC BY-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></a>. </p>
+            </div>
+        </div>
+
+        <div class="popup" id="jeffersonDavisInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('jeffersonDavisInfo');"><== Back to Timeline</a>
+            <h2>The First Confederate President is Elected (November 6, 1861)</h2>
+            <img src="images/jefferson_davis.jpg" id="jeffersonDavisImage" alt="Jefferson Davis" />
+            <p class="attribution">
+                Photo via <a href="https://www.goodfreephotos.com/">Good Free Photos</a>
+            </p>
+            <p>Jefferson Davis became president of the confederacy in November 6, 1861. What was interesting concerning the presidency for a president 
+            of the Confederate States of America was that they would only have to serve one term that lasted six years (<a href="https://en.wikipedia.org/wiki/President_of_the_Confederate_States_of_America#:~:text=Confederate%20presidents%20were%20to%20be,provided%20by%20the%20permanent%20constitution." target="_blank">Wikipedia</a>). 
+            The president was not given that much power, which was quite similar to what the US president should have been. It wasn't until Abraham Lincoln 
+            became president that the presidency became one of the most powerful positions in the US.</p>
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('jeffersonDavisInfo');"><== Back to Timeline</a>
+
+        </div><!--Check to make sure that this information is true. Part of me thinks that there are a few things here that are incorrect. Better to fix it now than later!-->
+
+        <div class="popup" id="ironcladBattleInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('ironcladBattleInfo');"><== Back to Timeline</a>
+            <h2>Battle of the Ironclads (March 9, 1862)</h2>
+            <p>This particular battle is a bit more interesting than the others. The Battle of the Ironclads was a fight that occurred between two ships 
+            covered in iron plates. One of the ships belonged to the Union, and the other belonged to the Confederate army. What makes this battle interesting 
+            was that neither of the ships sank. Because they were covered in iron plates, the cannons that were fired would bounce off the sides of the ship. Because 
+            of this, everyone came back from that battle without a scratch.</p>
+        </div>
+
+        <div class="popup" id="battleOfShilohInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('battleOfShilohInfo');"><== Back to Timeline</a>
+            <h2>Battle of Shiloh (April 6, 1862)</h2>
+            <p><i>Date found on <b style="color: blue;">G</b><b style="color:red;">o</b><b style="color:orange;">o</b><b style="color:blue;">g</b><b style="color:green;">l</b><b style="color:red;">e</b></i></p>
+            <img src="images/battle_of_shiloh.jpg" id="battleOfShilohImage" alt="Battle of Shiloh">
+            <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/28826830@N00/28750748745">Battle of Shiloh</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/28826830@N00">exit78</a> is marked with <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse">Public Domain Mark 1.0 <img src="https://mirrors.creativecommons.org/presskit/icons/pd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></a>. </p>
+            <p>In the Battle of Shiloh, General Bragg and his men attacked at the Hornet's Nest, which was a location on the battle field. During the first day of the battle, 
+            April 6, 1862, the Confederate troops were able to drive the Union soldiers away from the battlefield. To the Confederates, it looked as if the Union had lost that 
+            day.</p>
+            <p>The following morning, the Union armies had received reinforcements, which gave them the chance to try to "get back" at the Confederate armies. Because of this, 
+            the army, which was led by General Sherman, was able to force the Confederate armies to retreat. At one point, it looked as if the Union was beginning to win. However, 
+            Nathan Forrest, along with his men, charged into the battle where Sherman's men were at. At one point in the battle, there were Union soldiers all around Forrest, so 
+            much so that he had to take out his saber and hack at them. At one point, Forrest had a bullet shot into his leg, but that did not stop him. At one point, he even used 
+            a Union soldier as a shield, and, as he was charging up a hill, dropped him off along the way. This was the main reason why General Sherman called Nathan Forrest "Devil 
+            Forrest."</p>
+        </div>
+
+        <div class="popup" id="antiamBattleInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('antiamBattleInfo');"><== Back to Timeline</a>
+            <h2>Battle of Antietam (September 17, 1862)</h2>            
+            <p><i>Date found on <a href="https://www.history.com/topics/american-civil-war/battle-of-antietam#:~:text=Contents&text=The%20Battle%20of%20Antietam%2C%20also,Antietam%20Creek%20near%20Sharpsburg%2C%20Maryland." target="_blank">history.com</a>.</i></p>
+            <div class="center"><img src="images/battle-of-antietam-of-the-american-civil-war.jpg" id="antiamBattleImage" alt="Battle of Antiatam"><br>
+            <p class="attribution">Photo via <a href="https://www.goodfreephotos.com/">Good Free Photos</a></p>
+            </div>
+            <p>The way the Battle of Antietam started is quite interesting. It all starts when the Confederates devised a plan to cross Confederate lines into the Union lines. 
+            During the planning stage, "Stonewall" Jackson advised that they take the fight to the enemy, and that the forces of Great Britain could help out with this endeavor 
+            if necessary.</p>
+            <p>Finally, the process of executing the plan began. General Lee, with his 40,000 men, marched into Maryland, where they were welcomed in by the citizens. However, 
+            during the journey, they lost the dispatch papers for their battle plans. These very papers were found by a single Union soldier, who later gave the papers to General 
+            McClellan. Using these plans, General McClellan, along with his 75,000 men, went to Antietam to cut off the battle plans. This was when things started to get pretty 
+            nasty.</p>
+            <p>When the opposing troops met up at Antietam, there was a river that ran in the middle of the site. Lee decided to fight with the river to his back, which was quite 
+            risky due to the fact that the only way to retreat was by going across a bridge, which could get many soldiers killed. However, Lee was able to live to fight another 
+            day since General McClellan was a cautious individual and sent in his troops one at a time.</p>
+            <p>When the battle ended, there were 23,000 dead bodies throughout the area of impact. This is the main reason why this was one of the bloodiest battles in the 
+            history of the Civil War.</p>
+        </div>
+
+        <div class="popup" id="emancipationProclamationInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('emancipationProclamationInfo');"><== Back to Timeline</a>
+            <h2>The Emancipation Proclamation (January 1, 1863)</h2>
+            <img src="images/emancipation_proclamation.jpg" id="emancipationImage" alt="Emancipation Proclamation">
+            <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/31282761@N08/4341149482">The First Reading of the Emancipation Proclamation Before the Cabinet, 1866.</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/31282761@N08">The Henry Ford</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">CC BY-NC-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></a>. </p>
+            <p>
+                The Emancipation Proclamation, which was signed in January 1, 1863, ordered that those who were enslaved be released from slavery. Even though
+                benefits came to the slaves because of this order, it was published in order to make a political move against the Confederates. However, it was 
+                this event that made the focus of the war shift to slavery instead of keeping the states together.
+            </p>
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('emancipationProclamationInfo');"><== Back to Timeline</a>
+        </div>
+
+        <div class="popup" id="battleOfChancellorsvilleInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('battleOfChancellorsvilleInfo');"><== Back to Timeline</a>
+            <h2>Battle of Chancellorsville (April 30, 1863 - May 6, 1863)</h2>
+            <p><i>Dates provided by <a href="https://www.battlefields.org/learn/civil-war/battles/chancellorsville">www.battlefields.org</a>, the official website 
+                of American Battlefield Trust.</i></p>
+            <p>Before this battle occurred, General Joseph Hooker became the replacement leader for the Union (I think? Check online for more information). Throughout 
+            the war, the Union troops made many failed attempts to take Richmond from the Confederate side. Because of this, General Hooker decided to make another 
+            attempt: he, with his 133,000 men, would attack General Lee and his 60,000 men. The battle plan involved having his men attacking from three different positions, thus 
+            surrounding Lee and his men. This would have been a successful plan if it weren't for the fact that Lee had a plan of his own, which involved dividing his own men 
+            twice into three groups of defense, which helped create a wall of protection for the Confederate army.</p>
+            <p>It was during this battle, however, that the Confederate army experienced a devastating loss. When the Confederate armies were sent off to battle, Lee had appointed 
+            General "Stonewall" Jackson to lead the troops. During the battle, the Confederates accidentally fired on Jackson, injuring him badly. The results were not that pretty: 
+            Jackson had to have his arm chopped off by the surgeons at their camp. After General Lee learned what had happened to Jackson, he remarked, "Jackson has lost his left arm, 
+            but I have lost my right."</p>
+            <p>As Jackson was breathing his final breaths, he began to give orders to those listening to him:</p>
+            <p>"Order A.P. Hill to prepare for action. Pass the infantry to the front rapidly. Tell Major Hawks—"</p>
+            <p>Jackson paused for a moment, but he did not finish his sentence. Instead, he smiled to those listening and whispered, "Let us pass over the river and rest under the shade 
+            of the trees."</p>
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('battleOfChancellorsvilleInfo');"><== Back to Timeline</a>
+        </div>
+
+        <div class="popup" id="gettysburgBattleInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('gettysburgBattleInfo');"><== Back to Timeline</a>
+            <h2>Battle of Gettysburg (July 1, 1863)</h2>
+            <p><i>Date found on <b style="color: blue;">G</b><b style="color:red;">o</b><b style="color:orange;">o</b><b style="color:blue;">g</b><b style="color:green;">l</b><b style="color:red;">e</b></i></p>
+            <div class="center">
+                <img src="images/battle_of_gettysburg.jpg" id="gettysburgBattleImage" alt="Battle of Gettysburg" />
+                <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/82134796@N03/9847569036">Gettysburg museum diorama of the Civil War battle.</a>" by <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/82134796@N03">denisbin</a> is licensed under <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nd/2.0/?ref=openverse">CC BY-ND 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></a>. </p>
+            </div>
+            <p>On July 1, 1863, General Lee, with his 76,000 men, entered Gettysburg, Pennsylvania, which was a territory held by the Union troops. When the Union troops, 
+            which were led by General Meade, saw the Confederate armies in their territory, they knew that there was no avoiding with what was going to happen. It was never 
+            the plan of either opposing side to meet up with each other, but they decided to fight each other then and there.</p>
+            <p>When the Battle of Gettysburg began, the Confederates made a great effort to take over Little Round Top, which was held by Joshua Chamberlain at the time. However, 
+            they never had any luck in that endeavor, for after two days of open fire, neither side had lost. Because of this, on the third day of battle, Lee sent his men down the 
+            ridge, across the valley, and down the other ridge in order to make an attempt to charge at the Union line. If they were able to break through, the Union army could be 
+            ended then and there and march into Washington DC. General George Pickett had the honor of leading the men in order to accomplish this strategy.</p>
+            <p>When Pickett and his men were down the ridge that they were told to go down, he and his men charged into the fray of the battle. However, he and his men were stopped by 
+            Union fire. As a result, only 100 men made it to the other side, for fifteen of the commanders died, and five were wounded.</p>
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('gettysburgBattleInfo');"><== Back to Timeline</a>
+        </div>
+
+        <div class="popup" id="gettysburgAddressInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('gettysburgAddressInfo');"><== Back to Timeline</a>
+            <h2>The Gettysburg Address (November 19, 1863)</h2>
+            <p>Shortly after the devastating Battle of Gettysburg, Abraham Lincoln visited the Gettysburg battleground. As he was looking throughout the battlefield, 
+            he was able to see what were the results of the decision to war against the Confederacy. All of this inspired him to write the Gettysburg Address, 
+            which he presented at the Gettysburg battlefield in November 19, 1863:</p>
+            <div class="speech">
+            <p><i>Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men 
+            are created equal.</i></p>
+            <p><i>Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great 
+            battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might 
+            live. It is altogether fitting and proper that we should do this.</i></p>
+            <p><i>But, in a larger sense, we can not dedicate—we can not consecrate—we can not hallow—this ground. The brave men, living and dead, who struggled here, have 
+            consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did 
+            here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to 
+            be here dedicated to the great task remaining before us—that from these honored dead we take increased devotion to that cause for which they gave the last full 
+            measure of devotion—that we here highly resolve that these dead shall not have died in vain—that this nation, under God, shall have a new birth of freedom—and that 
+            government of the people, by the people, for the people, shall not perish from the earth.</i></p>
+            </div>
+        </div>
+
+        <div class="popup" id="battleOfFranklinInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('battleOfFranklinInfo');"><== Back to Timeline</a>
+            <h2>Battle of Franklin (November 30, 1864)</h2>
+            <p><i>Date found on <a href="https://www.battlefields.org/learn/maps/franklin-nov-30-1864" target="_blank">www.battlefields.org</a>.</i></p>
+            <div class="center">
+                <img src="images/battle_of_franklin.jpg" id="franklinBattleImage" alt="Battle of Franklin" /><br>
+                <p class="attribution">"<a target="_blank" rel="noopener noreferrer" href="https://www.rawpixel.com/image/7666072/battle-franklin-november-30-1864">Battle of Franklin. November 30</a>" is marked with <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/publicdomain/zero/1.0/?ref=openverse">CC0 1.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"><img src="https://mirrors.creativecommons.org/presskit/icons/zero.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></a>. </p>
+            </div>
+            <p>Before this particular battle occurred, General Nathan Bedford Forrest was put under the command of General Hood, another of the Confederate officers. General Hood 
+            was the individual who came up with a battle plan for taking over Franklin, Tennesee (<a href="https://en.wikipedia.org/wiki/Battle_of_Franklin_(1864)" target="_blank">Wikipedia</a>). 
+            The idea was that the Confederate forces would charge at the city in a suicidal fashion, thus surprising the Union forces. Bedford Forrest advised him not to do this, 
+            but Hood would not listen.</p>
+            <p>When the Battle of Franklin occurred, there was a lot of bloodshed, more bloodshed than in any of all of the other battles that occured during the War Between 
+            the States. Because of this, when everything was said and done, the Union army ended victorious, and the Confederates ended with shame.</p>
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('battleOfFranklinInfo');"><== Back to Timeline</a>
+        </div>
+
+        <div class="popup" id="leeGrantSurrenderInfo">
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('leeGrantSurrenderInfo');"><== Back to Timeline</a>
+            <h2>Lee & Grant Surrender (April 9—12, 1865)</h2>
+            <p><i>Dates found on <a href="https://www.nps.gov/apco/learn/historyculture/the-surrender-meeting.htm#:~:text=April%209th%2C%201865%2C%20was%20the,Confederate%20Army%20of%20Northern%20Virginia." target="_blank">www.nps.gov</a>.</i></p>
+            <p>The event which involved General Lee and his forces surrendering to General Grant and his forces occurred after the Union troops had captured Richmond, Virginia, 
+            the capital of the Confederate States of America. Lee, who was quite devastated at this occurence, decided to surrender to the opposing force on April 9, 1865. The 
+            process of surrender ended in April 12, 1865—the very date when the war started approximately four years before.</p>
+            <p>The following days afterward, Lee was given the privilege to march with his men in a procession during a celebration that marked the end of a devastating war. 
+            Following behind Lee and his men was the famous Stonewall brigade, the men that "Stonewall" Jackson led while he was still alive. General Joshua Chamberlain, one 
+            of the Union generals during the Civil War, ordered his men to salute the brigade, to which they gladly did.</p>
+            <p>Even though things were making a turn for the better by the time the Civil War ended, the America that they met with at the end of the Civil War was not the 
+            same America that they had known before the war. Before the four-year conflict, the United States of America was made up of individual states which operated as 
+            individual nations. After the Civil War, the United States of America was a <i>complete</i> nation. Before the war, slavery was common throughout the states. 
+            Afterwards, the process had started to give colored individuals all of the freedoms that Americans enjoy to this very day. Before the War Between the States, 
+            the president had limited powers. After the Civil War, the president became one of the most powerful individuals in the world.</p>
+            <p>We hope you have enjoyed your journey through a few of the major events of the Civil War! If you would like this information to stay up here, you can do several 
+            things to support our site:</p>
+            <ol>
+                <li>Share this site with others. This can be done via social media or just plain SMS.</li>
+                <li>
+                    Contribute to our project by sending us more Civil War information. There are many other events that occurred during the Civil War that have not been listed here. However, you can help
+                    out by sending us more Civil War Events <a href="new_event.html" target="_blank">here</a>.
+                </li>
+            </ol>
+            <p>Thank you for exploring with us!</p>
+            <a href="javascript:void(0)" style="font-family: Calibri, sans-serif;" onclick="fadeOut('leeGrantSurrenderInfo');"><== Back to Timeline</a>
+        </div>
+
+        <section class="story">
+            <article>
+                <p>This was a project that was done for Azariah Easey's capstone project for his course in American history during high school. He has created other websites as well, including 
+		<a href="https://krdrabbits.com" target="_blank">KRdRabbits.com</a>, <a href="https://easeystrings.com" target="_blank">EaseyStrings.com</a>, <a href="https://americanfreedomtrain2026.us" target="_blank">AmericanFreedomTrain2026.us</a>, and <a href="https://www.bazinesdachurch.com" target="_blank">BazineSDAChurch.com</a>.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="story">
+        <p style="position: relative; bottom: 0; font-size: 12.0pt; padding-top: 50px;" id="developerNotice">Experiencing bugs on this site? Contact our developer <a href="developer-contact.html" target="_blank">here.</a></p>
+    </footer>
+
+    <script>
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        function showPopup(id) {
+            var popup = $(id);
+            popup.scrollIntoView(true);
+            popup.style.visibility = "visible";
+            popup.style.webkitAnimation = "fadeIn 1s";
+            popup.style.animation = "fadeIn 1s";
+        }
+
+        function checkDimensions() {
+            if (window.outerWidth <= "800") {
+                alert("It looks as if you are using a mobile device. To view this website, use a laptop for best performance. \
+If you still want to view the website through this device, then that's alright. Just be aware that the experience may not be as good.");
+            }
+        }
+
+        function fadeOut(id) {
+            var popup = $(id);
+            popup.scrollTop = 0;
+            popup.style.webkitAnimation = "fadeOut 1s";
+            popup.style.animation = "fadeOut 1s";
+            setTimeout(function () {
+                popup.style.visibility = "hidden";
+            }, 900);
+        }
+
+        const slider = document.querySelector('.scrolling-wrapper');
+        let mouseDown = false;
+        let startX, scrollLeft;
+        var startXValues = [];
+        var sliderValue = 0;
+        var time = 0;
+
+        slider.offsetLeft = 0;
+
+        checkDimensions();
+
+        let startDragging = function (e) {
+            mouseDown = true;
+            slider.style.cursor = "grabbing";
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            console.log(slider.scrollLeft);
+        };
+        let stopDragging = function (e) {
+            mouseDown = false;
+            slider.style.cursor = "grab";
+        };
+
+        slider.addEventListener('mousemove', (e) => {
+            e.preventDefault();
+            if (!mouseDown) {
+                slider.style.cursor = "grab";
+                return;
+            }
+            const x = e.pageX - slider.offsetLeft;
+            const scroll = x - startX;
+            slider.scrollLeft = scrollLeft - scroll;
+        });
+
+        slider.addEventListener('mousedown', startDragging, false);
+        slider.addEventListener('mouseup', stopDragging, false);
+        slider.addEventListener('mouseleave', stopDragging, false);
+    </script>
+</body>
+</html>

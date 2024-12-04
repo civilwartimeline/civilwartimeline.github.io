@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Is there an event from the Civil War that you would like seen on the timeline? You can write out the event right here!">
+        <meta name="author" content="Azariah Easey">
+        <meta name="keywords" content="civil war timeline, civil war timeline of events, american civil war timeline, u s civil war timeline, u.s civil war timeline, u.s. civil war timeline, US civil war timeline">
+        <meta name="viewport" content="width=device-width">
+        <title>Add Event</title>
+        <style>
+            @import url(site_fonts/CASTELAR.TTF);
+            /*everything else for paragraph tags*/
+
+            body {
+                background-image: url(images/paper-bg.jpg);
+                background-repeat: initial;
+                /*font-family: Arial, sans-serif;*/ /*in case font goes wrong*/
+                font-family: "Castellar", Calibri, sans-serif;
+                cursor: inherit;
+            }
+
+            h1 {
+                font-family: "Castellar", Calibri, sans-serif;
+            }
+
+            p, ul, li, ol {
+                font-family: Calibri, sans-serif;
+                font-size: 15pt;
+            }
+
+            input, textarea {
+                font-family: Calibri, sans-serif;
+                font-size: 16px;
+            }
+
+            #title {
+                min-width: 440px;
+                text-align: center;
+            }
+
+            #name {
+                min-width: 220px;
+            }
+
+            form {
+                text-align: center;
+            }
+
+            textarea {
+                width: 300px;
+            }
+
+            section {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+
+            @media only screen and (max-width: 783px) {
+                section {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+            }
+
+            @media only screen and (max-width: 506px) {
+                section {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 style="text-align: center; padding-bottom: 58px;" id="changingTitle">Civil War Event Timeline Contribution</h1>
+        </header>
+
+        <main>
+            <section>
+                <p>As you have been looking through this timeline, you might have been faced with the fact that there was a particular 
+                event from the Civil War that has not been mentioned. We would love to know what we are forgetting! This is why we give 
+                users the chance to add more information into the project.</p>
+                <p>Before you add the information, here are a few recommendations that we advise you to do while you are sending the information:</p>
+                <ol>
+                    <li><b>Give us a title.</b> If you do not give us a title, we may have a harder time knowing what we are putting up on the timeline.</li>
+                    <li><b>Write out what occurred during the event.</b> There are several ways you can do this. You can write out an outline explaining what 
+                    occurred during the event, and we can write out the paragraph for you. However, if you want to write out all of the paragraphs, you can do it in 
+                    several ways: <ul>
+                          <li><b>Format it appropriately using HTML.</b> This is something for those who are developers. If you send us the information in an 
+                        HTML format, we can easily take the information you wrote and put it into the site.</li>
+                          <li><b>Write out the information raw.</b> This is mostly for those who are good at writing but do not have sufficient experience with HTML. 
+                        If you write the information raw, just write <code>&lt;end of paragraph&gt;</code> at the end of each paragraph that way we can know each paragraph 
+                        division.</li>
+                          </ul></li>
+                    <li><b>Check for plagiarism.</b> This is one of the most important parts of this. We do not want to put plagiarized information in our site. If there 
+                    is any plagiarism in any of the information that you send, we may have to replace a bit of the information.</li>
+                    <li><b>Use clean language.</b> We do our best to make sure that this site is not just friendly for adults, but also for kids. If you send us information with 
+                    foul language in your writing, we will have to reject the information.</li>
+                    <li><b>Give us your name.</b> As we get more names, we will have a page dedicated to showing the list of contributors to 
+                    this project. If you do not want to reveal your identity, just give us your first and middle initials, and we will put them there. If you do not want to 
+                    give your initials either, you can just send the paragraph the way it is.</li>
+                </ol>
+            </section>
+            <section>
+                <form id="civilWarInformation" action="https://formsubmit.io/send/534c2b9a-1707-4329-8a1b-949b7da86ea8" method="post">
+                    <input name="_redirect" type="hidden" id="name" value="https://civilwartimeline.github.io/event_sent.html">
+                    <input name="title" type="text" id="title" placeholder="Enter Title of Event Here (e.g. The Battle of Bull Run (July 21, 1861)"><br><br>
+                    <input name="name" type="text" id="name" placeholder="Write Your Name Here (optional)"><br><br>
+                    <textarea name="eventInformation" id="eventInformation" rows="5" placeholder="Place Event Information Here"></textarea><br><br>
+                    <input name="_formsubmit_id" type="text" style="display:none">
+                    <input value="Submit" type="submit">
+                </form>
+            </section>
+        </main>
+
+        <footer></footer>
+
+        <script>
+            var textarea = $("eventInformation");
+
+            textarea.oninput = function () {
+                textarea.style.height = "";
+                textarea.style.height = textarea.scrollHeight + "px";
+            }
+
+            function $(id) {
+                return document.getElementById(id);
+            }
+        </script>
+    </body>
+</html>

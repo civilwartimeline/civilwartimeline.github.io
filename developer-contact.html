@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="You can contact our developer here.">
+        <meta name="author" content="Azariah Easey">
+        <meta name="keywords" content="Civil War Event Timeline Developer Contact, developer contact for civil war event timeline">
+        <meta name="viewport" content="width=device-width">
+        <title>Developer Contact</title>
+        <style>
+            body {
+                background-image: url(images/paper-bg.jpg);
+                background-repeat: initial;
+                /*font-family: Arial, sans-serif;*/ /*in case font goes wrong*/
+                font-family: "Castellar", Calibri, sans-serif;
+                cursor: inherit;
+            }
+
+            h1 {
+                font-family: "Castellar", Calibri, sans-serif;
+            }
+
+            p, ul, li, ol {
+                font-family: Calibri, sans-serif;
+                font-size: 20pt;
+            }
+
+            .textHolder {
+                padding-left: 10%;
+            }
+
+            textarea {
+                font-family: Calibri, sans-serif;
+                font-size: 15pt;
+                max-width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 style="text-align: center;">Developer Contact Form</h1>
+        </header>
+
+        <main>
+            <article>
+                <section>
+                    <div class="textHolder">
+                        <form id="developerform" name="developerForm" class="developerForm" action="https://formsubmit.io/send/534c2b9a-1707-4329-8a1b-949b7da86ea8" method="post">
+                            <input name="_redirect" type="hidden" id="name" value="https://civilwartimeline.github.io/developer_message_sent.html" />
+                            <p>Enter the URL of the page that is experiencing the issues.</p>
+                            <input type="text" name="urlName" id="urlName" style="height: 30px; width: 250px; font-size: 13pt;" placeholder="Enter URL Here" />
+                            <p>Enter the issues you are experiencing in the paragraph field below.</p>
+                            <textarea id="issueExplanation" name="issueExplanation" class="paragraphTags" placeholder="Enter Message Here"></textarea><br /><br />
+                            <input type="submit" value="Send" style="width: 100px; height: 30px;" />
+                        </form>
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <footer></footer>
+
+        <script>
+            var textarea = document.getElementById("issueExplanation");
+
+            textarea.oninput = function () {
+                textarea.style.height = "";
+                textarea.style.height = textarea.scrollHeight + "px";
+            }
+        </script>
+    </body>
+</html>
